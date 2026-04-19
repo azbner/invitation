@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitation Officielle</title>
 
 <style>
@@ -13,7 +14,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 /* CARTE GLASS */
@@ -23,9 +25,9 @@ body {
     border-radius: 25px;
     padding: 50px;
     width: 650px;
+    max-width: 100%;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
     border: 1px solid rgba(255,255,255,0.1);
-    animation: fadeIn 1s ease;
     transition: 0.4s;
 }
 
@@ -50,7 +52,7 @@ p {
     transition: 0.3s;
 }
 
-/* HOVER TEXTE WOW (Apple style) */
+/* HOVER TEXTE WOW */
 p:hover {
     transform: scale(1.05);
     background: linear-gradient(90deg, #0a84ff, #5e5ce6, #0a84ff);
@@ -58,7 +60,7 @@ p:hover {
     -webkit-text-fill-color: transparent;
 }
 
-/* BLOCS INFO */
+/* INFOS BOX */
 .info {
     margin-top: 25px;
     padding: 20px;
@@ -96,8 +98,8 @@ p:hover {
 /* bouton flyer */
 .btn.secondary {
     background: rgba(255,255,255,0.08);
-    box-shadow: none;
     border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: none;
 }
 
 .btn.secondary:hover {
@@ -105,10 +107,50 @@ p:hover {
     box-shadow: 0 10px 30px rgba(52,199,89,0.6);
 }
 
-/* animation entrée */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ===================== */
+/* 📱 TABLETTE */
+/* ===================== */
+@media (max-width: 900px) {
+    .card {
+        padding: 35px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+/* ===================== */
+/* 📱 TÉLÉPHONE */
+/* ===================== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 </style>
 </head>
