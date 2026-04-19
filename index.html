@@ -61,30 +61,7 @@ h1 {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ========================= */
-/* LETTER ANIMATION */
-/* ========================= */
-
-.hover-text {
-    display: inline-block;
-}
-
-/* chaque lettre */
-.hover-text span {
-    display: inline-block;
-    transition: transform 0.25s ease, color 0.25s ease;
-}
-
-/* hover global */
-.hover-text:hover span {
-    transform: scale(1.3);
-    color: #0a84ff;
-}
-
-/* ========================= */
-/* BOUTONS */
-/* ========================= */
-
+/* BOUTONS CONTAINER ULTRA SAFE */
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -92,6 +69,7 @@ h1 {
     margin-top: 28px;
 }
 
+/* BOUTONS */
 .btn {
     display: flex;
     justify-content: center;
@@ -119,6 +97,7 @@ h1 {
     box-shadow: 0 12px 30px rgba(10,132,255,0.35);
 }
 
+/* SECONDARY */
 .btn.secondary {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.15);
@@ -129,10 +108,7 @@ h1 {
     background: linear-gradient(135deg, #34c759, #30d158);
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
+/* MOBILE FIX */
 @media (max-width: 600px) {
     .card {
         padding: 22px;
@@ -154,29 +130,29 @@ h1 {
 
 <div class="card">
 
-<h1 class="hover-text">Invitation Officielle</h1>
+<h1>Invitation Officielle</h1>
 
-<p class="hover-text"><strong>Madame la Directrice, Monsieur l’Échevin, Chers Parents,</strong></p>
+<p><strong>Madame la Directrice, Monsieur l’Échevin, Chers Parents,</strong></p>
 
-<div class="section hover-text">
-Nous avons le plaisir de vous inviter à la présentation de notre projet de fin d'année.
+<div class="section">
+<p>Nous avons le plaisir de vous inviter à la présentation de notre projet de fin d'année.</p>
 </div>
 
-<div class="section hover-text">
-<strong>Le projet :</strong><br>
-Cette pièce de théâtre, entièrement réalisée par les élèves, traite du thème important du harcèlement.
+<div class="section">
+<p><strong>Le projet :</strong><br>
+Cette pièce de théâtre, entièrement réalisée par les élèves, traite du thème important du harcèlement.</p>
 </div>
 
-<div class="info hover-text">
+<div class="info">
 <p><strong>📍 Infos pratiques :</strong></p>
 <p>Lieu : Salle des fêtes de la bibliothèque de Jette</p>
 <p>Date : Vendredi 22 mai à 18h30</p>
 <p>🥤 Drink : À partir de 19h45</p>
 </div>
 
-<div class="section hover-text">
-Nous espérons vous voir nombreux.<br>
-Cordialement, les élèves.
+<div class="section">
+<p>Nous espérons vous voir nombreux.</p>
+<p>Cordialement, les élèves.</p>
 </div>
 
 <!-- BOUTONS -->
@@ -186,20 +162,6 @@ Cordialement, les élèves.
 </div>
 
 </div>
-
-<script>
-/* transforme chaque texte hover-text en lettres */
-document.querySelectorAll(".hover-text").forEach(el => {
-    const text = el.textContent;
-    el.innerHTML = "";
-
-    text.split("").forEach(char => {
-        const span = document.createElement("span");
-        span.textContent = char;
-        el.appendChild(span);
-    });
-});
-</script>
 
 </body>
 </html>
