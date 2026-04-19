@@ -6,6 +6,10 @@
 <title>Invitation Officielle</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Arial;
@@ -15,14 +19,13 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 16px;
 }
 
-/* CARTE APPLE GLASS */
+/* CARTE */
 .card {
-    width: 680px;
-    max-width: 100%;
-    padding: 45px;
+    width: min(680px, 100%);
+    padding: 40px;
     border-radius: 28px;
 
     background: rgba(255,255,255,0.06);
@@ -31,21 +34,14 @@ body {
     border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 
-    overflow: hidden; /* 🔥 FIX IMPORTANT */
-    animation: fadeIn 0.8s ease;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.015);
+    overflow: hidden;
 }
 
 /* TITRE */
 h1 {
     text-align: center;
-    font-size: 34px;
+    font-size: clamp(22px, 4vw, 34px);
     margin-bottom: 20px;
-    letter-spacing: -0.5px;
 }
 
 /* TEXTES */
@@ -53,18 +49,6 @@ h1 {
     margin-top: 18px;
     line-height: 1.6;
     font-size: 16px;
-}
-
-p {
-    transition: 0.25s ease;
-}
-
-/* HOVER texte */
-p:hover {
-    transform: scale(1.03);
-    background: linear-gradient(90deg, #0a84ff, #5e5ce6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /* INFO BOX */
@@ -77,37 +61,35 @@ p:hover {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* BOUTONS */
+/* BOUTONS CONTAINER ULTRA SAFE */
 .buttons {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin-top: 28px;
-    flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-/* bouton principal */
+/* BOUTONS */
 .btn {
-    padding: 11px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 16px;
     border-radius: 999px;
+
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
 
-    background: linear-gradient(135deg, #0a84ff, #5e5ce6);
     color: white;
+    background: linear-gradient(135deg, #0a84ff, #5e5ce6);
 
     box-shadow: 0 6px 18px rgba(10,132,255,0.25);
+
     transition: 0.25s ease;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    max-width: 100%;
-    box-sizing: border-box;
+    width: 100%;
 }
 
 .btn:hover {
@@ -115,7 +97,7 @@ p:hover {
     box-shadow: 0 12px 30px rgba(10,132,255,0.35);
 }
 
-/* bouton secondaire */
+/* SECONDARY */
 .btn.secondary {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.15);
@@ -124,47 +106,21 @@ p:hover {
 
 .btn.secondary:hover {
     background: linear-gradient(135deg, #34c759, #30d158);
-    border: 1px solid transparent;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* TABLET */
-@media (max-width: 900px) {
-    .card {
-        padding: 35px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-}
-
-/* MOBILE */
+/* MOBILE FIX */
 @media (max-width: 600px) {
     .card {
-        padding: 25px;
+        padding: 22px;
         border-radius: 20px;
     }
 
-    h1 {
-        font-size: 24px;
+    .buttons {
+        grid-template-columns: 1fr;
     }
 
     .section {
         font-size: 14px;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
     }
 }
 </style>
@@ -201,13 +157,8 @@ Cette pièce de théâtre, entièrement réalisée par les élèves, traite du t
 
 <!-- BOUTONS -->
 <div class="buttons">
-    <a href="invitation.pdf" download class="btn">
-        📄 Invitation
-    </a>
-
-    <a href="flyer.pdf" download class="btn secondary">
-        🖼️ Flyer
-    </a>
+    <a href="invitation.pdf" download class="btn">📄 Invitation</a>
+    <a href="flyer.pdf" download class="btn secondary">🖼️ Flyer</a>
 </div>
 
 </div>
