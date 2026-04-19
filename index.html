@@ -31,6 +31,7 @@ body {
     border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 
+    overflow: hidden; /* 🔥 FIX IMPORTANT */
     animation: fadeIn 0.8s ease;
     transition: 0.3s;
 }
@@ -54,11 +55,11 @@ h1 {
     font-size: 16px;
 }
 
-/* HOVER texte soft Apple */
 p {
     transition: 0.25s ease;
 }
 
+/* HOVER texte */
 p:hover {
     transform: scale(1.03);
     background: linear-gradient(90deg, #0a84ff, #5e5ce6);
@@ -66,7 +67,7 @@ p:hover {
     -webkit-text-fill-color: transparent;
 }
 
-/* BOX INFO */
+/* INFO BOX */
 .info {
     margin-top: 22px;
     padding: 18px;
@@ -83,6 +84,8 @@ p:hover {
     gap: 12px;
     margin-top: 28px;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* bouton principal */
@@ -102,6 +105,9 @@ p:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .btn:hover {
@@ -121,7 +127,7 @@ p:hover {
     border: 1px solid transparent;
 }
 
-/* animation entrée */
+/* ANIMATION */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
