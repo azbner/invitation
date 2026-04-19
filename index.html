@@ -18,102 +18,119 @@ body {
     padding: 20px;
 }
 
-/* CARTE GLASS */
+/* CARTE APPLE GLASS */
 .card {
-    backdrop-filter: blur(25px);
-    background: rgba(255,255,255,0.05);
-    border-radius: 25px;
-    padding: 50px;
-    width: 650px;
+    width: 680px;
     max-width: 100%;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.4s;
+    padding: 45px;
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+    animation: fadeIn 0.8s ease;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: scale(1.015);
 }
 
 /* TITRE */
 h1 {
     text-align: center;
-    font-size: 36px;
+    font-size: 34px;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 /* TEXTES */
 .section {
-    margin-top: 20px;
+    margin-top: 18px;
     line-height: 1.6;
+    font-size: 16px;
 }
 
+/* HOVER texte soft Apple */
 p {
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
-/* HOVER TEXTE WOW */
 p:hover {
-    transform: scale(1.05);
-    background: linear-gradient(90deg, #0a84ff, #5e5ce6, #0a84ff);
+    transform: scale(1.03);
+    background: linear-gradient(90deg, #0a84ff, #5e5ce6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* INFOS BOX */
+/* BOX INFO */
 .info {
-    margin-top: 25px;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* BOUTONS */
 .buttons {
     display: flex;
-    gap: 15px;
     justify-content: center;
-    margin-top: 30px;
+    gap: 12px;
+    margin-top: 28px;
     flex-wrap: wrap;
 }
 
+/* bouton principal */
 .btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 12px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
     background: linear-gradient(135deg, #0a84ff, #5e5ce6);
     color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(10,132,255,0.4);
+
+    box-shadow: 0 6px 18px rgba(10,132,255,0.25);
+    transition: 0.25s ease;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 30px rgba(10,132,255,0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(10,132,255,0.35);
 }
 
-/* bouton flyer */
+/* bouton secondaire */
 .btn.secondary {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
     box-shadow: none;
 }
 
 .btn.secondary:hover {
     background: linear-gradient(135deg, #34c759, #30d158);
-    box-shadow: 0 10px 30px rgba(52,199,89,0.6);
+    border: 1px solid transparent;
 }
 
-/* ===================== */
-/* 📱 TABLETTE */
-/* ===================== */
+/* animation entrée */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* TABLET */
 @media (max-width: 900px) {
     .card {
         padding: 35px;
-        width: 90%;
     }
 
     h1 {
@@ -121,35 +138,27 @@ p:hover {
     }
 }
 
-/* ===================== */
-/* 📱 TÉLÉPHONE */
-/* ===================== */
+/* MOBILE */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
     .card {
         padding: 25px;
-        border-radius: 18px;
+        border-radius: 20px;
     }
 
     h1 {
         font-size: 24px;
     }
 
-    p {
+    .section {
         font-size: 14px;
     }
 
     .buttons {
         flex-direction: column;
-        gap: 10px;
     }
 
     .btn {
         width: 100%;
-        text-align: center;
     }
 }
 </style>
@@ -187,11 +196,11 @@ Cette pièce de théâtre, entièrement réalisée par les élèves, traite du t
 <!-- BOUTONS -->
 <div class="buttons">
     <a href="invitation.pdf" download class="btn">
-        📄 Télécharger l'invitation
+        📄 Invitation
     </a>
 
     <a href="flyer.pdf" download class="btn secondary">
-        🖼️ Télécharger le flyer
+        🖼️ Flyer
     </a>
 </div>
 
